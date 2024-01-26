@@ -25,14 +25,14 @@ const QuestionTextField: React.FC<QuestionTextFieldProps> = ({
 
     if (chatMessage.length == 0) {
       const res = await axios.post(
-        `http://52.220.229.139/get-initial-response`,
+        `https://52.220.229.139/get-initial-response`,
         {
           text: text,
         }
       );
       setChatMessage([...chatMessage, text, res.data.response]);
     } else {
-      const res = await axios.post(`http://52.220.229.139/get-more-response`, {
+      const res = await axios.post(`https://52.220.229.139/get-more-response`, {
         text: text,
       });
       setChatMessage([...chatMessage, text, res.data.response]);
