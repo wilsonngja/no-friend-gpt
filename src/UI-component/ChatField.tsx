@@ -29,11 +29,11 @@ const ChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
       {chatMessages &&
         chatMessages.map((chatMessage: string | null, index: number) => (
           <GridItem
-            colStart={index % 2 == 0 ? 2 : 1}
+            colStart={index % 2 === 0 ? 2 : 1}
             rowStart={index + 1}
             mx={1}
           >
-            {index % 2 == 0 ? (
+            {index % 2 === 0 ? (
               <HStack spacing={2} height="100%">
                 <Box
                   mx={2}

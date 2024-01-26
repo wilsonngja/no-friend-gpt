@@ -1,6 +1,6 @@
 import { Box, Button, HStack, Input } from "@chakra-ui/react";
-import React, { useState, FC } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 
 interface QuestionTextFieldProps {
   chatMessage: string[]; // Assuming chatMessage is an array of strings
