@@ -35,9 +35,20 @@ const Dashboard = () => {
   }, [suggestedPromptText]);
 
   const getSuggestedQuery = async () => {
-    const res = await axios.get(`https://52.220.229.139/generate-prompts`);
-    console.log(res.data);
-    setSuggestedPromptText(res.data.msg);
+    try {
+      const res = await axios.get(`https://52.220.229.139/generate-prompts`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      });
+      console.log(res.data);
+      setSuggestedPromptText(res.data.msg);
+    } catch (error) {
+      console.log("An error occurred:", error);
+    }
   };
 
   const getLLMAnswer = async ({ text }: { text: string }) => {
@@ -47,15 +58,27 @@ const Dashboard = () => {
 
     if (chatMessage.length == 0) {
       const res = await axios.post(
-        `http://52.220.229.139/get-initial-response`,
+        `https://52.220.229.139/get-initial-response`,
         {
           text: text,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
+          },
         }
       );
       setChatMessage([...chatMessage, text, res.data.response]);
     } else {
       const res = await axios.post(`http://52.220.229.139/get-more-response`, {
         text: text,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
       });
       setChatMessage([...chatMessage, text, res.data.response]);
     }
@@ -76,7 +99,14 @@ const Dashboard = () => {
   }, [chatMessage]);
 
   const regenerateSuggestedPrompt = async () => {
-    const res = await axios.get(`http://52.220.229.139/generate-prompts`);
+    const res = await axios.get(`http://52.220.229.139/generate-prompts`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*",
+      },
+    });
     console.log(res.data);
     setSuggestedPromptText(res.data.msg);
   };
