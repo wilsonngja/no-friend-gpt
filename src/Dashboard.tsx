@@ -35,7 +35,7 @@ const Dashboard = () => {
   }, [suggestedPromptText]);
 
   const getSuggestedQuery = async () => {
-    const res = await axios.get(`http://52.220.229.139/generate-prompts`);
+    const res = await axios.get(`https://52.220.229.139/generate-prompts`);
     console.log(res.data);
     setSuggestedPromptText(res.data.msg);
   };
