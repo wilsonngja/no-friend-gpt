@@ -1,30 +1,4 @@
-import * as React from "react";
-import {
-  ChakraProvider,
-  Box,
-  Input,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  GridItem,
-  CSSReset,
-  Flex,
-  IconButton,
-  HStack,
-  extendTheme,
-} from "@chakra-ui/react";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import ImageIcon from "./UI-component/imageIcon";
-import {
-  FaLightbulb,
-  FaIcons,
-  FaRedo,
-  FaReply /* Replace with actual icons */,
-  FaPaperPlane,
-} from "react-icons/fa";
-import ChatField from "./UI-component/ChatField";
+import { CSSReset, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Dashboard from "./Dashboard";
 
 const theme = extendTheme({
