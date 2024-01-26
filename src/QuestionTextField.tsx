@@ -14,6 +14,15 @@ const QuestionTextField: React.FC<QuestionTextFieldProps> = ({
   // send the data to backend!!!!! @Marcus,@wilson , @Jonathan
   const [question, setQuestion] = useState("");
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    // Check for specific keys if needed, e.g., Enter key
+    if (event.key === "Enter" && !event.shiftKey && question.trim() !== "") {
+      handleSubmit();
+    }
+
+    // You can handle other keys or general key down events here
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(e.target.value);
   };
@@ -60,6 +69,7 @@ const QuestionTextField: React.FC<QuestionTextFieldProps> = ({
           placeholder="Type your question..."
           value={question}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
         />
         <Button
           colorScheme="green"
