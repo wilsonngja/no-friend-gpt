@@ -1,16 +1,7 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Spacer,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import React from "react";
-import ImageIcon from "./imageIcon";
-import UserIcon from "./UserIcon";
 import ChatImageIcon from "./ChatImageIcon";
+import UserIcon from "./UserIcon";
 
 interface ChatFieldProps {
   chatMessages: string[]; // Assuming chatMessage is an array of strings

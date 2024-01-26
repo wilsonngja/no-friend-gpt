@@ -1,25 +1,25 @@
 import {
-  Grid,
-  GridItem,
-  Flex,
-  HStack,
-  VStack,
-  IconButton,
-  Text,
   Box,
   Divider,
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+  IconButton,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { FaLightbulb, FaRedo, FaPaperPlane } from "react-icons/fa";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { FaLightbulb, FaPaperPlane, FaRedo } from "react-icons/fa";
+import QuestionTextField from "./QuestionTextField";
 import ChatField from "./UI-component/ChatField";
 import ImageIcon from "./UI-component/imageIcon";
-import QuestionTextField from "./QuestionTextField";
-import axios from "axios";
 
 const Dashboard = () => {
   const [chatMessage, setChatMessage] = useState<string[]>([]);
 
-  const [promptButtonActive, setPromptButtonActive] = useState(true);
+  const [promptButtonActive] = useState(true);
 
   const initPrompt: string =
     "Your text goes here. Replace this with your actual content. Your text goes here. Replace this with your actual content. Your text goes here. Replace this with your actual content. Your text goes here. Replace this with your actual content. Your text goes here. Replace this with your actual content.";

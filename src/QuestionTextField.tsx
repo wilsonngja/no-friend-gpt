@@ -23,7 +23,7 @@ const QuestionTextField: React.FC<QuestionTextFieldProps> = ({
 
     console.log(chatMessage.length);
 
-    if (chatMessage.length == 0) {
+    if (chatMessage.length === 0) {
       const res = await axios.post(
         `https://52.220.229.139/get-initial-response`,
         {
