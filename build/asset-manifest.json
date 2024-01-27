@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/static/js/main.be3a5a7a.js",
+    "static/js/787.4203b097.chunk.js": "/static/js/787.4203b097.chunk.js",
+    "static/media/noFriendGPT_icon.jpg": "/static/media/noFriendGPT_icon.479f32aba7086e22be48.jpg",
+    "index.html": "/index.html",
+    "main.be3a5a7a.js.map": "/static/js/main.be3a5a7a.js.map",
+    "787.4203b097.chunk.js.map": "/static/js/787.4203b097.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.be3a5a7a.js"
+  ]
+}
