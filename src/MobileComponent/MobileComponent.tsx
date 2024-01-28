@@ -32,7 +32,7 @@ const MobileComponent = () => {
         {/* The Text component will not be affected by the opacity */}
         <GridItem
           width="100%"
-          height="95%"
+          height="100%"
           display="flex"
           flexDirection="column"
         >
