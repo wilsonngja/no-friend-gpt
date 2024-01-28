@@ -25,6 +25,10 @@ const MobileChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
     useState<string>(initPrompt);
   const [chatMessage, setChatMessage] = useState<string[]>([]);
 
+  useEffect(() => {
+    getSuggestedQuery();
+  }, []);
+
   const regenerateSuggestedPrompt = async () => {
     const res = await axios.get(`http://52.220.229.139/generate-prompts`);
     console.log(res.data);
