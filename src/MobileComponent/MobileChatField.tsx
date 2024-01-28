@@ -17,13 +17,16 @@ import axios from "axios";
 
 interface ChatFieldProps {
   chatMessages: string[]; // Assuming chatMessage is an array of strings
+  setChatMessage: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const MobileChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
+const MobileChatField: React.FC<ChatFieldProps> = ({
+  chatMessages,
+  setChatMessage,
+}) => {
   const initPrompt: string = "Generating prompt text...";
   const [suggestedPromptText, setSuggestedPromptText] =
     useState<string>(initPrompt);
-  const [chatMessage, setChatMessage] = useState<string[]>([]);
 
   useEffect(() => {
     getSuggestedQuery();
@@ -36,23 +39,23 @@ const MobileChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
   };
 
   const getLLMAnswer = async ({ text }: { text: string }) => {
-    setChatMessage([...chatMessage, text]);
+    setChatMessage([...chatMessages, text]);
 
-    console.log(chatMessage.length);
+    console.log(chatMessages.length);
 
-    if (chatMessage.length === 0) {
+    if (chatMessages.length === 0) {
       const res = await axios.post(
         `http://52.220.229.139/get-initial-response`,
         {
           text: text,
         }
       );
-      setChatMessage([...chatMessage, text, res.data.response]);
+      setChatMessage([...chatMessages, text, res.data.response]);
     } else {
       const res = await axios.post(`http://52.220.229.139/get-more-response`, {
         text: text,
       });
-      setChatMessage([...chatMessage, text, res.data.response]);
+      setChatMessage([...chatMessages, text, res.data.response]);
     }
   };
   const getSuggestedQuery = async () => {
@@ -203,12 +206,6 @@ const MobileChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
                         </Text>
                       </Box>
                     </VStack>
-
-                    {/* <ChatImageIcon
-                    iconSize="sm"
-                    label="NoFriendGPT"
-                    labelFontSize="12px"
-                  /> */}
                   </Box>
                 )}
               </Box>

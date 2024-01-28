@@ -13,6 +13,7 @@ import MobileChatField from "./MobileChatField";
 
 const MobileComponent = () => {
   const [chatMessage, setChatMessage] = useState<string[]>([]);
+
   return (
     <Box position="relative" height="100%">
       <Box
@@ -36,7 +37,10 @@ const MobileComponent = () => {
           display="flex"
           flexDirection="column"
         >
-          <MobileChatField chatMessages={chatMessage} />
+          <MobileChatField
+            chatMessages={chatMessage}
+            setChatMessage={setChatMessage}
+          />
 
           <Box
             // position="fixed"
