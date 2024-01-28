@@ -14,7 +14,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { FaLightbulb, FaPaperPlane, FaRedo } from "react-icons/fa";
 import QuestionTextField from "./QuestionTextField";
 import ChatField from "./UI-component/ChatField";
@@ -98,7 +98,10 @@ const Dashboard = () => {
           flexDirection="column"
           px={2}
         >
-          <MobileComponent />
+          <MobileComponent
+            chatMessage={chatMessage}
+            setChatMessage={setChatMessage}
+          />
         </Box>
       ) : (
         <Box

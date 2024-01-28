@@ -11,9 +11,15 @@ import bgLogo from "../resources/images/noFriendGPT_icon.jpg";
 import QuestionTextField from "../QuestionTextField";
 import MobileChatField from "./MobileChatField";
 
-const MobileComponent = () => {
-  const [chatMessage, setChatMessage] = useState<string[]>([]);
+interface ChatFieldProps {
+  chatMessage: string[]; // Assuming chatMessage is an array of strings
+  setChatMessage: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
+const MobileComponent: React.FC<ChatFieldProps> = ({
+  chatMessage,
+  setChatMessage,
+}) => {
   return (
     <Box position="relative" height="100%">
       <Box

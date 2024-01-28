@@ -174,7 +174,7 @@ const MobileChatField: React.FC<ChatFieldProps> = ({
                           // justifyContent="center"
                           // alignItems="center"
                           display="inline-block"
-                          fontSize="md"
+                          fontSize="sm"
                         >
                           {chatMessage}
                         </Text>
