@@ -10,6 +10,7 @@ import {
   IconButton,
   Text,
   VStack,
+  Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -18,6 +19,7 @@ import { FaLightbulb, FaPaperPlane, FaRedo } from "react-icons/fa";
 import QuestionTextField from "./QuestionTextField";
 import ChatField from "./UI-component/ChatField";
 import ImageIcon from "./UI-component/imageIcon";
+import MobileComponent from "./MobileComponent/MobileComponent";
 
 const Dashboard = () => {
   const [chatMessage, setChatMessage] = useState<string[]>([]);
@@ -96,11 +98,7 @@ const Dashboard = () => {
     >
       {/* Grid to cover the remaining space with two columns */}
       {layout === "mobile" ? (
-        <AbsoluteCenter alignItems="center">
-          <Heading as="h5" size="lg" textAlign="center">
-            Mobile Version not up yet. Please wait for update.
-          </Heading>
-        </AbsoluteCenter>
+        <MobileComponent />
       ) : (
         <Grid
           templateRows="1fr"
@@ -230,6 +228,7 @@ const Dashboard = () => {
           <GridItem my={4}>
             <Divider orientation="vertical" />
           </GridItem>
+
           {/* Second column */}
           <GridItem
             width="100%"

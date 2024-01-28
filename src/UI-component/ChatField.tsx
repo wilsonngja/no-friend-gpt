@@ -54,6 +54,7 @@ const ChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
                     // justifyContent="center"
                     // alignItems="center"
                     display="inline-block"
+                    fontSize="md"
                   >
                     {chatMessage}
                   </Text>
