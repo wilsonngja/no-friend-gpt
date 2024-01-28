@@ -92,7 +92,7 @@ const Dashboard = () => {
     <>
       {layout === "mobile" ? (
         <Box
-          height="93vh"
+          height="91vh"
           width="full"
           display="flex"
           flexDirection="column"
