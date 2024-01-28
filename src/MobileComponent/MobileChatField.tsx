@@ -157,7 +157,7 @@ const MobileChatField: React.FC<ChatFieldProps> = ({
               <Box>
                 {index % 2 === 0 ? (
                   <Box display="flex" justifyContent="flex-start" ml={2}>
-                    <VStack align="stretch">
+                    <VStack align="stretch" gap={0}>
                       <HStack>
                         <MobileUserIcon />
                         <Text>Me</Text>
@@ -183,7 +183,7 @@ const MobileChatField: React.FC<ChatFieldProps> = ({
                   </Box>
                 ) : (
                   <Box display="flex" justifyContent="flex-start">
-                    <VStack align="stretch">
+                    <VStack align="stretch" gap={0}>
                       <HStack>
                         <MobileGPTImageIcon />
                         <Text>NoFriend GPT</Text>
