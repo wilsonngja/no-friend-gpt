@@ -7,7 +7,7 @@ import {
   VStack,
   IconButton,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChatImageIcon from "../UI-component/ChatImageIcon";
 import UserIcon from "../UI-component/UserIcon";
 import MobileUserIcon from "./MobileUserIcon";
