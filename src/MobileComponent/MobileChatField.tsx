@@ -74,7 +74,7 @@ const MobileChatField: React.FC<ChatFieldProps> = ({ chatMessages }) => {
   const [promptButtonActive] = useState(true);
 
   return (
-    <VStack height="80%" width="100%">
+    <VStack height="100%" width="100%">
       <Box height="15%" width="100%">
         <HStack height="100%" width="100%">
           <Box
