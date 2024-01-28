@@ -182,7 +182,7 @@ const MobileChatField: React.FC<ChatFieldProps> = ({
                     </VStack>
                   </Box>
                 ) : (
-                  <Box display="flex" justifyContent="flex-start">
+                  <Box display="flex" justifyContent="flex-start" ml={2}>
                     <VStack align="stretch" gap={0}>
                       <HStack>
                         <MobileGPTImageIcon />
