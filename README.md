@@ -1,1 +1,1 @@
-# no-friend-gpt
+# No Friend GPT
